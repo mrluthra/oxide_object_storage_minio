@@ -149,8 +149,6 @@ Three Oxide platform quirks the build works around. Each will collapse to a clea
 - **NVMe device naming is not deterministic.** The bootstrap script discovers the boot device dynamically with `findmnt` and excludes it from the data-disk format step.
 - **VRRP (IP protocol 112) is dropped by the Oxide VPC firewall.** keepalived's standard heartbeat does not pass between LBs. The build uses a TCP-polling watcher script with an idempotent failover that calls the Oxide API.
 
-Full design rationale in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
-
 ---
 
 ## Default cluster sizing
