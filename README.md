@@ -2,7 +2,7 @@
 
 A reference build for running [MinIO](https://min.io) on the [Oxide rack](https://oxide.computer). Spin up a distributed S3-compatible object store on your own hardware in under 20 minutes with Terraform, or walk the build step by step with the lab guide.
 
-Companion to the blog post: *Object storage you don't have to rent*.
+Companion to the blog post: *Own Your Object storage with Oxide*.
 
 ---
 
