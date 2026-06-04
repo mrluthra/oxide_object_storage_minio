@@ -14,7 +14,40 @@ Companion to the blog post: *Own Your Object storage with Oxide*.
 - TLS terminated at the load balancer
 - Everything inside one Oxide project, one VPC, one subnet
 
-Reference architecture and network topology diagrams are in [`docs/`](docs/).
+Reference architecture and network topology diagrams are 
+
+                                     Consuming workloads
+                                              |
+                                       https://s3.customer.com
+                                              |
+                                        +-----+-----+
+                                        | Floating  |
+                                        |    IP     |
+                                        +-----+-----+
+                                              |
+                              +---------------+----------------+
+                              |                                |
+                       +------+--------+               +-------+-------+
+                       | LB VM #1      |   keepalived  | LB VM #2      |
+                       | HAProxy (TLS) | <-----------> | HAProxy (TLS) |
+                       | active        |   FIP failover| standby       |
+                       +------+--------+               +-------+-------+
+                              |                                |
+                              +---------------+----------------+
+                                              |
+                               +------+-------+-------+-------+
+                               |      |       |       |
+                          +----+--+ +-+----+ +-+----+ +-+-----+
+                          | inst1 | |inst2 | |inst3 | |inst4  |
+                          | MinIO | |MinIO | |MinIO | |MinIO  |
+                          | local | |local | |local | |local  |
+                          | [d][d]| |[d][d]| |[d][d]| |[d][d] |
+                          | [d][d]| |[d][d]| |[d][d]| |[d][d] |
+                          +-------+ +------+ +------+ +-------+
+                               \      |        |       /
+                                \     |        |      /
+                                 Oxide local disks
+(sled-local, no Crucible replication; MinIO EC:4 provides redundancy across drives and instances)
 
 ---
 
