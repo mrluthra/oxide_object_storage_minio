@@ -89,8 +89,7 @@ Best if you want to understand what each layer is doing, debug a real-world buil
 
 The lab guide walks through every phase end to end: project setup, networking, MinIO instance provisioning, load balancer pair, Floating IP, OS bootstrap, cluster formation, watcher-based failover, and smoke testing.
 
-- Markdown source: [`docs/minio_labguide.md`](docs/minio_labguide.md)
-- PDF version: [`docs/MinIO_Oxide_setup_labguide.pdf`](docs/MinIO_Oxide_setup_labguide.pdf)
+- PDF version: [`MinIO_Oxide_setup_labguide.pdf`](MinIO_Oxide_setup_labguide.pdf)
 
 About 90 minutes from "fresh silo" to "working S3 endpoint" if you follow it straight through.
 
