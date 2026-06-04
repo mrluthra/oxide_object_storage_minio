@@ -188,7 +188,7 @@ The thought-leadership post that introduces this repo and explains the design ch
 
 ## Contributing
 
-Issues and pull requests welcome. If you hit an Oxide platform quirk that is not yet documented in `docs/ARCHITECTURE.md` or the known-constraints list above, please open an issue with the reproduction steps and any `oxide` CLI output you have. That feedback is what keeps the workarounds in the module up to date.
+Issues and pull requests welcome. If you hit an Oxide platform quirk that is not yet documented or the known-constraints list above, please open an issue with the reproduction steps and any `oxide` CLI output you have. That feedback is what keeps the workarounds in the module up to date.
 
 ---
 
