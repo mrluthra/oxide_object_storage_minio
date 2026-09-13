@@ -37,6 +37,7 @@ To come:
    ```bash
    export OXIDE_HOST="https://<your-silo>.sys.<rack>.oxide-preview.com"
    export OXIDE_TOKEN="$(cat ~/.config/oxide/credentials.toml | awk -F'"' '/^token/{print $2}')"
+   export TF_VAR_oxide_profile="<CLI profile Name of Silo>"
    # Failover credentials, passed via env var so it never lands in tfvars/state files
    export TF_VAR_oxide_credentials_for_failover="$(cat ~/.config/oxide/credentials.toml)"
    ```
